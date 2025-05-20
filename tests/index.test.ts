@@ -306,13 +306,13 @@ describe('instantiate client', () => {
     test('empty env variable', () => {
       process.env['INSTANTLY_BASE_URL'] = ''; // empty
       const client = new Instantly({ apiKey: 'My API Key' });
-      expect(client.baseURL).toEqual('https://api.instantly.ai/v2');
+      expect(client.baseURL).toEqual('https://api.instantly.ai');
     });
 
     test('blank env variable', () => {
       process.env['INSTANTLY_BASE_URL'] = '  '; // blank
       const client = new Instantly({ apiKey: 'My API Key' });
-      expect(client.baseURL).toEqual('https://api.instantly.ai/v2');
+      expect(client.baseURL).toEqual('https://api.instantly.ai');
     });
   });
 
