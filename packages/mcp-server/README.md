@@ -9,8 +9,8 @@ It is generated with [Stainless](https://www.stainless.com/).
 Because it's not published yet, clone the repo and build it:
 
 ```sh
-git clone git@github.com:stainless-sdks/instantly-typescript.git
-cd instantly-typescript
+git clone git@github.com:Romamo/instantly.git
+cd instantly
 ./scripts/bootstrap
 ./scripts/build
 ```
@@ -40,11 +40,7 @@ For clients with a configuration JSON, it might look something like this:
   "mcpServers": {
     "instantly_api": {
       "command": "node",
-      "args": [
-        "/path/to/local/instantly-typescript/packages/mcp-server",
-        "--client=claude",
-        "--tools=dynamic"
-      ],
+      "args": ["/path/to/local/instantly/packages/mcp-server", "--client=claude", "--tools=dynamic"],
       "env": {
         "INSTANTLY_API_KEY": "My API Key"
       }
