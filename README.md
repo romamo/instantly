@@ -4,14 +4,14 @@
 
 This library provides convenient access to the Instantly REST API from server-side TypeScript or JavaScript.
 
-The REST API documentation can be found on [instantly.ai](https://instantly.ai). The full API of this library can be found in [api.md](api.md).
+The full API of this library can be found in [api.md](api.md).
 
 It is generated with [Stainless](https://www.stainless.com/).
 
 ## Installation
 
 ```sh
-npm install git+ssh://git@github.com:Romamo/instantly.git
+npm install git+ssh://git@github.com:stainless-sdks/instantly-typescript.git
 ```
 
 > [!NOTE]
@@ -30,7 +30,9 @@ const client = new Instantly({
 });
 
 async function main() {
-  const campaigns = await client.campaign.list();
+  const response = await client.v2.getAccountCampaignMappings('REPLACE_ME');
+
+  console.log(response.items);
 }
 
 main();
@@ -49,7 +51,9 @@ const client = new Instantly({
 });
 
 async function main() {
-  const campaigns: Instantly.CampaignListResponse = await client.campaign.list();
+  const response: Instantly.V2GetAccountCampaignMappingsResponse = await client.v2.getAccountCampaignMappings(
+    'REPLACE_ME',
+  );
 }
 
 main();
@@ -66,7 +70,7 @@ a subclass of `APIError` will be thrown:
 <!-- prettier-ignore -->
 ```ts
 async function main() {
-  const campaigns = await client.campaign.list().catch(async (err) => {
+  const response = await client.v2.getAccountCampaignMappings('REPLACE_ME').catch(async (err) => {
     if (err instanceof Instantly.APIError) {
       console.log(err.status); // 400
       console.log(err.name); // BadRequestError
@@ -109,7 +113,7 @@ const client = new Instantly({
 });
 
 // Or, configure per-request:
-await client.campaign.list({
+await client.v2.getAccountCampaignMappings('REPLACE_ME', {
   maxRetries: 5,
 });
 ```
@@ -126,7 +130,7 @@ const client = new Instantly({
 });
 
 // Override per-request:
-await client.campaign.list({
+await client.v2.getAccountCampaignMappings('REPLACE_ME', {
   timeout: 5 * 1000,
 });
 ```
@@ -149,13 +153,15 @@ Unlike `.asResponse()` this method consumes the body, returning once it is parse
 ```ts
 const client = new Instantly();
 
-const response = await client.campaign.list().asResponse();
+const response = await client.v2.getAccountCampaignMappings('REPLACE_ME').asResponse();
 console.log(response.headers.get('X-My-Header'));
 console.log(response.statusText); // access the underlying Response object
 
-const { data: campaigns, response: raw } = await client.campaign.list().withResponse();
+const { data: response, response: raw } = await client.v2
+  .getAccountCampaignMappings('REPLACE_ME')
+  .withResponse();
 console.log(raw.headers.get('X-My-Header'));
-console.log(campaigns);
+console.log(response.items);
 ```
 
 ### Logging
@@ -346,7 +352,7 @@ This package generally follows [SemVer](https://semver.org/spec/v2.0.0.html) con
 
 We take backwards-compatibility seriously and work hard to ensure you can rely on a smooth upgrade experience.
 
-We are keen for your feedback; please open an [issue](https://www.github.com/Romamo/instantly/issues) with questions, bugs, or suggestions.
+We are keen for your feedback; please open an [issue](https://www.github.com/stainless-sdks/instantly-typescript/issues) with questions, bugs, or suggestions.
 
 ## Requirements
 
