@@ -12,6 +12,7 @@ import type { APIResponseProps } from './internal/parse';
 import { getPlatformHeaders } from './internal/detect-platform';
 import * as Shims from './internal/shims';
 import * as Opts from './internal/request-options';
+import * as qs from './internal/qs';
 import { VERSION } from './version';
 import * as Errors from './core/error';
 import * as Uploads from './core/uploads';
@@ -20,61 +21,26 @@ import { APIPromise } from './core/api-promise';
 import { type Fetch } from './internal/builtin-types';
 import { HeadersLike, NullableHeaders, buildHeaders } from './internal/headers';
 import { FinalRequestOptions, RequestOptions } from './internal/request-options';
-import { Account, AccountRetrieveDetailsResponse, AccountRetrieveUsageResponse } from './resources/account';
-import {
-  Suppression,
-  SuppressionAddParams,
-  SuppressionAddResponse,
-  SuppressionDeleteParams,
-  SuppressionDeleteResponse,
-  SuppressionListParams,
-  SuppressionListResponse,
-} from './resources/suppression';
-import {
-  ToolEnrichWithLinkedinParams,
-  ToolVerifyEmailParams,
-  ToolVerifyEmailResponse,
-  Tools,
-} from './resources/tools';
-import { Workspace, WorkspaceListResponse } from './resources/workspace';
 import { readEnv } from './internal/utils/env';
 import { formatRequestDetails, loggerFor } from './internal/utils/log';
 import { isEmptyObj } from './internal/utils/values';
 import {
-  Campaign,
-  CampaignAddLeadsParams,
-  CampaignAddLeadsResponse,
-  CampaignArchiveParams,
-  CampaignArchiveResponse,
-  CampaignDeleteParams,
-  CampaignDeleteResponse,
-  CampaignGetAnalyticsResponse,
-  CampaignLaunchParams,
-  CampaignLaunchResponse,
-  CampaignListResponse,
-  CampaignPauseParams,
-  CampaignPauseResponse,
-  CampaignResource,
-  CampaignRetrieveParams,
-  CampaignRetrieveResponse,
-  CampaignUnarchiveParams,
-  CampaignUnarchiveResponse,
-} from './resources/campaign/campaign';
-import { Integrations } from './resources/integrations/integrations';
-import {
-  Lead,
-  LeadAddParams,
-  LeadAddResponse,
-  LeadDeleteParams,
-  LeadDeleteResponse,
-  LeadSetStatusParams,
-  LeadSetStatusResponse,
-} from './resources/lead/lead';
-import { Unibox } from './resources/unibox/unibox';
+  V2,
+  V2CreateAPIKeyParams,
+  V2DeleteAPIKeyParams,
+  V2GetAccountCampaignMappingsParams,
+  V2GetAccountCampaignMappingsResponse,
+  V2ListAPIKeysParams,
+  V2ListAPIKeysResponse,
+  V2ListAuditLogsParams,
+  V2ListAuditLogsResponse,
+  V2ListBackgroundJobsParams,
+  V2ListBackgroundJobsResponse,
+} from './resources/v2/v2';
 
 export interface ClientOptions {
   /**
-   * Your Instantly API Key.
+   * Defaults to process.env['INSTANTLY_API_KEY'].
    */
   apiKey?: string | undefined;
 
@@ -167,7 +133,7 @@ export class Instantly {
    * API Client for interfacing with the Instantly API.
    *
    * @param {string | undefined} [opts.apiKey=process.env['INSTANTLY_API_KEY'] ?? undefined]
-   * @param {string} [opts.baseURL=process.env['INSTANTLY_BASE_URL'] ?? https://api.instantly.ai/v2] - Override the default base URL for the API.
+   * @param {string} [opts.baseURL=process.env['INSTANTLY_BASE_URL'] ?? https://api.instantly.ai] - Override the default base URL for the API.
    * @param {number} [opts.timeout=1 minute] - The maximum amount of time (in milliseconds) the client will wait for a response before timing out.
    * @param {MergedRequestInit} [opts.fetchOptions] - Additional `RequestInit` options to be passed to `fetch` calls.
    * @param {Fetch} [opts.fetch] - Specify a custom `fetch` function implementation.
@@ -189,7 +155,7 @@ export class Instantly {
     const options: ClientOptions = {
       apiKey,
       ...opts,
-      baseURL: baseURL || `https://api.instantly.ai/v2`,
+      baseURL: baseURL || `https://api.instantly.ai`,
     };
 
     this.baseURL = options.baseURL!;
@@ -238,27 +204,11 @@ export class Instantly {
   }
 
   protected authHeaders(opts: FinalRequestOptions): NullableHeaders | undefined {
-    return buildHeaders([{ 'X-API-KEY': this.apiKey }]);
+    return buildHeaders([{ Authorization: `Bearer ${this.apiKey}` }]);
   }
 
-  /**
-   * Basic re-implementation of `qs.stringify` for primitive types.
-   */
   protected stringifyQuery(query: Record<string, unknown>): string {
-    return Object.entries(query)
-      .filter(([_, value]) => typeof value !== 'undefined')
-      .map(([key, value]) => {
-        if (typeof value === 'string' || typeof value === 'number' || typeof value === 'boolean') {
-          return `${encodeURIComponent(key)}=${encodeURIComponent(value)}`;
-        }
-        if (value === null) {
-          return `${encodeURIComponent(key)}=`;
-        }
-        throw new Errors.InstantlyError(
-          `Cannot stringify type ${typeof value}; Expected string, number, boolean, or null. If you need to pass nested query parameters, you can manually encode them, e.g. { query: { 'foo[key1]': value1, 'foo[key2]': value2 } }, and please open a GitHub issue requesting better support for your use case.`,
-        );
-      })
-      .join('&');
+    return qs.stringify(query, { arrayFormat: 'comma' });
   }
 
   private getUserAgent(): string {
@@ -738,83 +688,23 @@ export class Instantly {
 
   static toFile = Uploads.toFile;
 
-  campaign: API.CampaignResource = new API.CampaignResource(this);
-  lead: API.Lead = new API.Lead(this);
-  unibox: API.Unibox = new API.Unibox(this);
-  suppression: API.Suppression = new API.Suppression(this);
-  account: API.Account = new API.Account(this);
-  integrations: API.Integrations = new API.Integrations(this);
-  tools: API.Tools = new API.Tools(this);
-  workspace: API.Workspace = new API.Workspace(this);
+  v2: API.V2 = new API.V2(this);
 }
-Instantly.CampaignResource = CampaignResource;
-Instantly.Lead = Lead;
-Instantly.Unibox = Unibox;
-Instantly.Suppression = Suppression;
-Instantly.Account = Account;
-Instantly.Integrations = Integrations;
-Instantly.Tools = Tools;
-Instantly.Workspace = Workspace;
+Instantly.V2 = V2;
 export declare namespace Instantly {
   export type RequestOptions = Opts.RequestOptions;
 
   export {
-    CampaignResource as CampaignResource,
-    type Campaign as Campaign,
-    type CampaignRetrieveResponse as CampaignRetrieveResponse,
-    type CampaignListResponse as CampaignListResponse,
-    type CampaignDeleteResponse as CampaignDeleteResponse,
-    type CampaignAddLeadsResponse as CampaignAddLeadsResponse,
-    type CampaignArchiveResponse as CampaignArchiveResponse,
-    type CampaignGetAnalyticsResponse as CampaignGetAnalyticsResponse,
-    type CampaignLaunchResponse as CampaignLaunchResponse,
-    type CampaignPauseResponse as CampaignPauseResponse,
-    type CampaignUnarchiveResponse as CampaignUnarchiveResponse,
-    type CampaignRetrieveParams as CampaignRetrieveParams,
-    type CampaignDeleteParams as CampaignDeleteParams,
-    type CampaignAddLeadsParams as CampaignAddLeadsParams,
-    type CampaignArchiveParams as CampaignArchiveParams,
-    type CampaignLaunchParams as CampaignLaunchParams,
-    type CampaignPauseParams as CampaignPauseParams,
-    type CampaignUnarchiveParams as CampaignUnarchiveParams,
+    V2 as V2,
+    type V2GetAccountCampaignMappingsResponse as V2GetAccountCampaignMappingsResponse,
+    type V2ListAPIKeysResponse as V2ListAPIKeysResponse,
+    type V2ListAuditLogsResponse as V2ListAuditLogsResponse,
+    type V2ListBackgroundJobsResponse as V2ListBackgroundJobsResponse,
+    type V2CreateAPIKeyParams as V2CreateAPIKeyParams,
+    type V2DeleteAPIKeyParams as V2DeleteAPIKeyParams,
+    type V2GetAccountCampaignMappingsParams as V2GetAccountCampaignMappingsParams,
+    type V2ListAPIKeysParams as V2ListAPIKeysParams,
+    type V2ListAuditLogsParams as V2ListAuditLogsParams,
+    type V2ListBackgroundJobsParams as V2ListBackgroundJobsParams,
   };
-
-  export {
-    Lead as Lead,
-    type LeadDeleteResponse as LeadDeleteResponse,
-    type LeadAddResponse as LeadAddResponse,
-    type LeadSetStatusResponse as LeadSetStatusResponse,
-    type LeadDeleteParams as LeadDeleteParams,
-    type LeadAddParams as LeadAddParams,
-    type LeadSetStatusParams as LeadSetStatusParams,
-  };
-
-  export { Unibox as Unibox };
-
-  export {
-    Suppression as Suppression,
-    type SuppressionListResponse as SuppressionListResponse,
-    type SuppressionDeleteResponse as SuppressionDeleteResponse,
-    type SuppressionAddResponse as SuppressionAddResponse,
-    type SuppressionListParams as SuppressionListParams,
-    type SuppressionDeleteParams as SuppressionDeleteParams,
-    type SuppressionAddParams as SuppressionAddParams,
-  };
-
-  export {
-    Account as Account,
-    type AccountRetrieveDetailsResponse as AccountRetrieveDetailsResponse,
-    type AccountRetrieveUsageResponse as AccountRetrieveUsageResponse,
-  };
-
-  export { Integrations as Integrations };
-
-  export {
-    Tools as Tools,
-    type ToolVerifyEmailResponse as ToolVerifyEmailResponse,
-    type ToolEnrichWithLinkedinParams as ToolEnrichWithLinkedinParams,
-    type ToolVerifyEmailParams as ToolVerifyEmailParams,
-  };
-
-  export { Workspace as Workspace, type WorkspaceListResponse as WorkspaceListResponse };
 }
