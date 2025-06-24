@@ -47,7 +47,7 @@ export interface BackgroundJob {
    * Data about the job, used to store any additional information we need to process
    * the job
    */
-  data?: Record<string, unknown>;
+  data?: { [key: string]: unknown };
 
   /**
    * The id of the entity that the job is related to
