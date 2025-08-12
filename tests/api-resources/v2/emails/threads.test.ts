@@ -8,7 +8,7 @@ const client = new Instantly({
 });
 
 describe('resource threads', () => {
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('markAsRead', async () => {
     const responsePromise = client.v2.emails.threads.markAsRead('123e4567-e89b-12d3-a456-426614174000');
     const rawResponse = await responsePromise.asResponse();

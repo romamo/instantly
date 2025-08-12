@@ -8,7 +8,7 @@ const client = new Instantly({
 });
 
 describe('resource campaigns', () => {
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('create: only required params', async () => {
     const responsePromise = client.v2.campaigns.create({
       campaign_schedule: {
@@ -27,7 +27,7 @@ describe('resource campaigns', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('create: required and optional params', async () => {
     const response = await client.v2.campaigns.create({
       campaign_schedule: {
@@ -85,7 +85,7 @@ describe('resource campaigns', () => {
     });
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('retrieve', async () => {
     const responsePromise = client.v2.campaigns.retrieve('0196ed60-9def-737e-a0d1-a3309b44b3bd');
     const rawResponse = await responsePromise.asResponse();
@@ -97,7 +97,7 @@ describe('resource campaigns', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('update', async () => {
     const responsePromise = client.v2.campaigns.update('0196ed60-9df3-7dbf-86bb-f8ed4feb0573');
     const rawResponse = await responsePromise.asResponse();
@@ -109,7 +109,7 @@ describe('resource campaigns', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('update: request options and params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
@@ -174,7 +174,7 @@ describe('resource campaigns', () => {
     ).rejects.toThrow(Instantly.NotFoundError);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('list', async () => {
     const responsePromise = client.v2.campaigns.list();
     const rawResponse = await responsePromise.asResponse();
@@ -186,7 +186,7 @@ describe('resource campaigns', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('list: request options and params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
@@ -202,7 +202,7 @@ describe('resource campaigns', () => {
     ).rejects.toThrow(Instantly.NotFoundError);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('delete', async () => {
     const responsePromise = client.v2.campaigns.delete('0196ed60-9df4-73c4-ae10-505d46d09529');
     const rawResponse = await responsePromise.asResponse();
@@ -214,7 +214,7 @@ describe('resource campaigns', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('delete: request options and params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
@@ -226,7 +226,7 @@ describe('resource campaigns', () => {
     ).rejects.toThrow(Instantly.NotFoundError);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('activate', async () => {
     const responsePromise = client.v2.campaigns.activate('0196ed60-9dee-7ae4-aa01-d80a7e5a21e6');
     const rawResponse = await responsePromise.asResponse();
@@ -238,7 +238,7 @@ describe('resource campaigns', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('pause', async () => {
     const responsePromise = client.v2.campaigns.pause('0196ed60-9def-737e-a0d1-a32fc47d0488');
     const rawResponse = await responsePromise.asResponse();
@@ -250,7 +250,7 @@ describe('resource campaigns', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('share', async () => {
     const responsePromise = client.v2.campaigns.share('0196ed60-9df4-73c4-ae10-505e2ddb640a');
     const rawResponse = await responsePromise.asResponse();

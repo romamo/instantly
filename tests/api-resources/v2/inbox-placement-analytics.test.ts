@@ -8,7 +8,7 @@ const client = new Instantly({
 });
 
 describe('resource inboxPlacementAnalytics', () => {
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('retrieve', async () => {
     const responsePromise = client.v2.inboxPlacementAnalytics.retrieve(
       '0196ed60-9e1d-7dd8-8a52-347cb4a73599',
@@ -22,7 +22,7 @@ describe('resource inboxPlacementAnalytics', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('list: only required params', async () => {
     const responsePromise = client.v2.inboxPlacementAnalytics.list({
       test_id: '0196ed60-9e1c-7ac7-9f15-6783e633b06f',
@@ -36,7 +36,7 @@ describe('resource inboxPlacementAnalytics', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('list: required and optional params', async () => {
     const response = await client.v2.inboxPlacementAnalytics.list({
       test_id: '0196ed60-9e1c-7ac7-9f15-6783e633b06f',
@@ -51,7 +51,7 @@ describe('resource inboxPlacementAnalytics', () => {
     });
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('getDeliverabilityInsights: only required params', async () => {
     const responsePromise = client.v2.inboxPlacementAnalytics.getDeliverabilityInsights({
       test_id: '0196ed60-9e1e-7948-b02d-db80420744b6',
@@ -65,7 +65,7 @@ describe('resource inboxPlacementAnalytics', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('getDeliverabilityInsights: required and optional params', async () => {
     const response = await client.v2.inboxPlacementAnalytics.getDeliverabilityInsights({
       test_id: '0196ed60-9e1e-7948-b02d-db80420744b6',
@@ -80,7 +80,7 @@ describe('resource inboxPlacementAnalytics', () => {
     });
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('getStatsByDate: only required params', async () => {
     const responsePromise = client.v2.inboxPlacementAnalytics.getStatsByDate({
       test_id: '0196ed60-9e1e-7948-b02d-db82e2862c87',
@@ -94,7 +94,7 @@ describe('resource inboxPlacementAnalytics', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('getStatsByDate: required and optional params', async () => {
     const response = await client.v2.inboxPlacementAnalytics.getStatsByDate({
       test_id: '0196ed60-9e1e-7948-b02d-db82e2862c87',
@@ -107,7 +107,7 @@ describe('resource inboxPlacementAnalytics', () => {
     });
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('getStatsByTestID: only required params', async () => {
     const responsePromise = client.v2.inboxPlacementAnalytics.getStatsByTestID({ test_ids: ['string'] });
     const rawResponse = await responsePromise.asResponse();
@@ -119,7 +119,7 @@ describe('resource inboxPlacementAnalytics', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('getStatsByTestID: required and optional params', async () => {
     const response = await client.v2.inboxPlacementAnalytics.getStatsByTestID({
       test_ids: ['string'],

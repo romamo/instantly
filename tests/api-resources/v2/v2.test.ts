@@ -8,7 +8,7 @@ const client = new Instantly({
 });
 
 describe('resource v2', () => {
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('createAPIKey: only required params', async () => {
     const responsePromise = client.v2.createAPIKey({ name: 'My API Key', scopes: ['campaigns:create'] });
     const rawResponse = await responsePromise.asResponse();
@@ -20,12 +20,12 @@ describe('resource v2', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('createAPIKey: required and optional params', async () => {
     const response = await client.v2.createAPIKey({ name: 'My API Key', scopes: ['campaigns:create'] });
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('deleteAPIKey', async () => {
     const responsePromise = client.v2.deleteAPIKey('0196ed60-9dcf-7419-95dc-b52596a5d19d');
     const rawResponse = await responsePromise.asResponse();
@@ -37,7 +37,7 @@ describe('resource v2', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('deleteAPIKey: request options and params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
@@ -49,7 +49,7 @@ describe('resource v2', () => {
     ).rejects.toThrow(Instantly.NotFoundError);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('getAccountCampaignMappings', async () => {
     const responsePromise = client.v2.getAccountCampaignMappings('user@example.com');
     const rawResponse = await responsePromise.asResponse();
@@ -61,7 +61,7 @@ describe('resource v2', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('getAccountCampaignMappings: request options and params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
@@ -73,7 +73,7 @@ describe('resource v2', () => {
     ).rejects.toThrow(Instantly.NotFoundError);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('listAPIKeys', async () => {
     const responsePromise = client.v2.listAPIKeys();
     const rawResponse = await responsePromise.asResponse();
@@ -85,7 +85,7 @@ describe('resource v2', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('listAPIKeys: request options and params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
@@ -96,7 +96,7 @@ describe('resource v2', () => {
     ).rejects.toThrow(Instantly.NotFoundError);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('listAuditLogs', async () => {
     const responsePromise = client.v2.listAuditLogs();
     const rawResponse = await responsePromise.asResponse();
@@ -108,7 +108,7 @@ describe('resource v2', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('listAuditLogs: request options and params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
@@ -124,7 +124,7 @@ describe('resource v2', () => {
     ).rejects.toThrow(Instantly.NotFoundError);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('listBackgroundJobs', async () => {
     const responsePromise = client.v2.listBackgroundJobs();
     const rawResponse = await responsePromise.asResponse();
@@ -136,7 +136,7 @@ describe('resource v2', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('listBackgroundJobs: request options and params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
@@ -159,7 +159,7 @@ describe('resource v2', () => {
     ).rejects.toThrow(Instantly.NotFoundError);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('retrieveBackgroundJob', async () => {
     const responsePromise = client.v2.retrieveBackgroundJob('682c6276dbe2ca7be8a1fbeb');
     const rawResponse = await responsePromise.asResponse();
