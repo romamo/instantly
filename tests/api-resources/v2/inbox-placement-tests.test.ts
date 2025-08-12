@@ -8,7 +8,7 @@ const client = new Instantly({
 });
 
 describe('resource inboxPlacementTests', () => {
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('create: only required params', async () => {
     const responsePromise = client.v2.inboxPlacementTests.create({
       name: 'My Inbox Placement Test',
@@ -23,7 +23,7 @@ describe('resource inboxPlacementTests', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('create: required and optional params', async () => {
     const response = await client.v2.inboxPlacementTests.create({
       name: 'My Inbox Placement Test',
@@ -65,7 +65,7 @@ describe('resource inboxPlacementTests', () => {
     });
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('retrieve', async () => {
     const responsePromise = client.v2.inboxPlacementTests.retrieve('0196ed60-9e27-71ca-b8e5-080c6100dbb8');
     const rawResponse = await responsePromise.asResponse();
@@ -77,7 +77,7 @@ describe('resource inboxPlacementTests', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('retrieve: request options and params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
@@ -89,7 +89,7 @@ describe('resource inboxPlacementTests', () => {
     ).rejects.toThrow(Instantly.NotFoundError);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('update', async () => {
     const responsePromise = client.v2.inboxPlacementTests.update('0196ed60-9e28-7569-8928-99648e3cbcf2');
     const rawResponse = await responsePromise.asResponse();
@@ -101,7 +101,7 @@ describe('resource inboxPlacementTests', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('update: request options and params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
@@ -135,7 +135,7 @@ describe('resource inboxPlacementTests', () => {
     ).rejects.toThrow(Instantly.NotFoundError);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('list', async () => {
     const responsePromise = client.v2.inboxPlacementTests.list();
     const rawResponse = await responsePromise.asResponse();
@@ -147,7 +147,7 @@ describe('resource inboxPlacementTests', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('list: request options and params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
@@ -165,7 +165,7 @@ describe('resource inboxPlacementTests', () => {
     ).rejects.toThrow(Instantly.NotFoundError);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('delete', async () => {
     const responsePromise = client.v2.inboxPlacementTests.delete('0196ed60-9e28-7569-8928-996332f3db99');
     const rawResponse = await responsePromise.asResponse();
@@ -177,7 +177,7 @@ describe('resource inboxPlacementTests', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('delete: request options and params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
@@ -189,7 +189,7 @@ describe('resource inboxPlacementTests', () => {
     ).rejects.toThrow(Instantly.NotFoundError);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('getEspOptions', async () => {
     const responsePromise = client.v2.inboxPlacementTests.getEspOptions();
     const rawResponse = await responsePromise.asResponse();

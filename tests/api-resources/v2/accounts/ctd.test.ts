@@ -8,7 +8,7 @@ const client = new Instantly({
 });
 
 describe('resource ctd', () => {
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('retrieveStatus: only required params', async () => {
     const responsePromise = client.v2.accounts.ctd.retrieveStatus({ host: 'example.com' });
     const rawResponse = await responsePromise.asResponse();
@@ -20,7 +20,7 @@ describe('resource ctd', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('retrieveStatus: required and optional params', async () => {
     const response = await client.v2.accounts.ctd.retrieveStatus({ host: 'example.com' });
   });

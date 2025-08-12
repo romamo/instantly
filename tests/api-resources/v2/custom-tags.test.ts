@@ -8,7 +8,7 @@ const client = new Instantly({
 });
 
 describe('resource customTags', () => {
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('create: only required params', async () => {
     const responsePromise = client.v2.customTags.create({ label: 'Important' });
     const rawResponse = await responsePromise.asResponse();
@@ -20,7 +20,7 @@ describe('resource customTags', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('create: required and optional params', async () => {
     const response = await client.v2.customTags.create({
       label: 'Important',
@@ -28,7 +28,7 @@ describe('resource customTags', () => {
     });
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('retrieve', async () => {
     const responsePromise = client.v2.customTags.retrieve('0196ed60-9e0c-77bf-94be-6def0605ea90');
     const rawResponse = await responsePromise.asResponse();
@@ -40,7 +40,7 @@ describe('resource customTags', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('update', async () => {
     const responsePromise = client.v2.customTags.update('0196ed60-9e0d-7ccf-bfdb-f37e7b212adc');
     const rawResponse = await responsePromise.asResponse();
@@ -52,7 +52,7 @@ describe('resource customTags', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('update: request options and params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
@@ -64,7 +64,7 @@ describe('resource customTags', () => {
     ).rejects.toThrow(Instantly.NotFoundError);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('list', async () => {
     const responsePromise = client.v2.customTags.list();
     const rawResponse = await responsePromise.asResponse();
@@ -76,7 +76,7 @@ describe('resource customTags', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('list: request options and params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
@@ -93,7 +93,7 @@ describe('resource customTags', () => {
     ).rejects.toThrow(Instantly.NotFoundError);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('delete', async () => {
     const responsePromise = client.v2.customTags.delete('0196ed60-9e0f-7e4f-8e3f-6a32b93099f7');
     const rawResponse = await responsePromise.asResponse();
@@ -105,7 +105,7 @@ describe('resource customTags', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('delete: request options and params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
@@ -117,7 +117,7 @@ describe('resource customTags', () => {
     ).rejects.toThrow(Instantly.NotFoundError);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('toggleResource: only required params', async () => {
     const responsePromise = client.v2.customTags.toggleResource({
       assign: true,
@@ -134,7 +134,7 @@ describe('resource customTags', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('toggleResource: required and optional params', async () => {
     const response = await client.v2.customTags.toggleResource({
       assign: true,

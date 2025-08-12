@@ -409,7 +409,7 @@ export namespace V2ListAuditLogsResponse {
     /**
      * Metadata about the audit log
      */
-    audit_metadata?: Record<string, unknown>;
+    audit_metadata?: { [key: string]: unknown };
 
     /**
      * Associated campaign ID if applicable

@@ -8,7 +8,7 @@ const client = new Instantly({
 });
 
 describe('resource leadLists', () => {
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('create: only required params', async () => {
     const responsePromise = client.v2.leadLists.create({ name: 'My Lead List' });
     const rawResponse = await responsePromise.asResponse();
@@ -20,7 +20,7 @@ describe('resource leadLists', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('create: required and optional params', async () => {
     const response = await client.v2.leadLists.create({
       name: 'My Lead List',
@@ -29,7 +29,7 @@ describe('resource leadLists', () => {
     });
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('retrieve', async () => {
     const responsePromise = client.v2.leadLists.retrieve('0196ed60-9e31-7495-8af3-b31c81a26ffa');
     const rawResponse = await responsePromise.asResponse();
@@ -41,7 +41,7 @@ describe('resource leadLists', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('update', async () => {
     const responsePromise = client.v2.leadLists.update('0196ed60-9e31-7495-8af3-b31d1948a0e0');
     const rawResponse = await responsePromise.asResponse();
@@ -53,7 +53,7 @@ describe('resource leadLists', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('update: request options and params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
@@ -69,7 +69,7 @@ describe('resource leadLists', () => {
     ).rejects.toThrow(Instantly.NotFoundError);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('list', async () => {
     const responsePromise = client.v2.leadLists.list();
     const rawResponse = await responsePromise.asResponse();
@@ -81,7 +81,7 @@ describe('resource leadLists', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('list: request options and params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
@@ -97,7 +97,7 @@ describe('resource leadLists', () => {
     ).rejects.toThrow(Instantly.NotFoundError);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('delete', async () => {
     const responsePromise = client.v2.leadLists.delete('0196ed60-9e32-78fa-97e5-5b3bf3730248');
     const rawResponse = await responsePromise.asResponse();
@@ -109,7 +109,7 @@ describe('resource leadLists', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('delete: request options and params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(

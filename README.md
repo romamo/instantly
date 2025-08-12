@@ -1,6 +1,6 @@
 # Instantly TypeScript API Library
 
-[![NPM version](https://img.shields.io/npm/v/instantly.svg)](https://npmjs.org/package/instantly) ![npm bundle size](https://img.shields.io/bundlephobia/minzip/instantly)
+[![NPM version](<https://img.shields.io/npm/v/instantly.svg?label=npm%20(stable)>)](https://npmjs.org/package/instantly) ![npm bundle size](https://img.shields.io/bundlephobia/minzip/instantly)
 
 This library provides convenient access to the Instantly REST API from server-side TypeScript or JavaScript.
 
@@ -15,7 +15,7 @@ npm install git+ssh://git@github.com:Romamo/instantly.git
 ```
 
 > [!NOTE]
-> Once this package is [published to npm](https://app.stainless.com/docs/guides/publish), this will become: `npm install instantly`
+> Once this package is [published to npm](https://www.stainless.com/docs/guides/publish), this will become: `npm install instantly`
 
 ## Usage
 
@@ -229,9 +229,8 @@ parameter. This library doesn't validate at runtime that the request matches the
 send will be sent as-is.
 
 ```ts
-client.foo.create({
-  foo: 'my_param',
-  bar: 12,
+client.v2.getAccountCampaignMappings({
+  // ...
   // @ts-expect-error baz is not yet public
   baz: 'undocumented option',
 });
