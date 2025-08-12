@@ -8,7 +8,7 @@ const client = new Instantly({
 });
 
 describe('resource emailVerification', () => {
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('create: only required params', async () => {
     const responsePromise = client.v2.emailVerification.create({ email: 'example@example.com' });
     const rawResponse = await responsePromise.asResponse();
@@ -20,7 +20,7 @@ describe('resource emailVerification', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('create: required and optional params', async () => {
     const response = await client.v2.emailVerification.create({
       email: 'example@example.com',
@@ -28,7 +28,7 @@ describe('resource emailVerification', () => {
     });
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('checkStatus', async () => {
     const responsePromise = client.v2.emailVerification.checkStatus('user@example.com');
     const rawResponse = await responsePromise.asResponse();

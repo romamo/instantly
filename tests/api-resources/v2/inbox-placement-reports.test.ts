@@ -8,7 +8,7 @@ const client = new Instantly({
 });
 
 describe('resource inboxPlacementReports', () => {
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('retrieve', async () => {
     const responsePromise = client.v2.inboxPlacementReports.retrieve('0196ed60-9e22-739d-b744-cd556f89315a');
     const rawResponse = await responsePromise.asResponse();
@@ -20,7 +20,7 @@ describe('resource inboxPlacementReports', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('list: only required params', async () => {
     const responsePromise = client.v2.inboxPlacementReports.list({
       test_id: 'd290f1ee-6c54-4b01-90e6-d701748f0851',
@@ -34,7 +34,7 @@ describe('resource inboxPlacementReports', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('list: required and optional params', async () => {
     const response = await client.v2.inboxPlacementReports.list({
       test_id: 'd290f1ee-6c54-4b01-90e6-d701748f0851',

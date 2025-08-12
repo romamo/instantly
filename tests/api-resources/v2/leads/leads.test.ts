@@ -8,7 +8,7 @@ const client = new Instantly({
 });
 
 describe('resource leads', () => {
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('create', async () => {
     const responsePromise = client.v2.leads.create();
     const rawResponse = await responsePromise.asResponse();
@@ -20,7 +20,7 @@ describe('resource leads', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('create: request options and params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
@@ -51,7 +51,7 @@ describe('resource leads', () => {
     ).rejects.toThrow(Instantly.NotFoundError);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('retrieve', async () => {
     const responsePromise = client.v2.leads.retrieve('0196ed60-9e3b-7e86-8351-7267b1ecf34d');
     const rawResponse = await responsePromise.asResponse();
@@ -63,7 +63,7 @@ describe('resource leads', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('update', async () => {
     const responsePromise = client.v2.leads.update('0196ed60-9e3d-73e0-b4d2-0c42e5c900c0');
     const rawResponse = await responsePromise.asResponse();
@@ -75,7 +75,7 @@ describe('resource leads', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('update: request options and params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
@@ -98,7 +98,7 @@ describe('resource leads', () => {
     ).rejects.toThrow(Instantly.NotFoundError);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('list', async () => {
     const responsePromise = client.v2.leads.list();
     const rawResponse = await responsePromise.asResponse();
@@ -110,7 +110,7 @@ describe('resource leads', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('list: request options and params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
@@ -148,7 +148,7 @@ describe('resource leads', () => {
     ).rejects.toThrow(Instantly.NotFoundError);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('delete', async () => {
     const responsePromise = client.v2.leads.delete('0196ed60-9e3e-7398-b028-dc714d952ca4');
     const rawResponse = await responsePromise.asResponse();
@@ -160,7 +160,7 @@ describe('resource leads', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('delete: request options and params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
@@ -172,7 +172,7 @@ describe('resource leads', () => {
     ).rejects.toThrow(Instantly.NotFoundError);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('bulkAssign: only required params', async () => {
     const responsePromise = client.v2.leads.bulkAssign({
       organization_user_ids: ['182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e'],
@@ -186,7 +186,7 @@ describe('resource leads', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('bulkAssign: required and optional params', async () => {
     const response = await client.v2.leads.bulkAssign({
       organization_user_ids: ['182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e'],
@@ -212,7 +212,7 @@ describe('resource leads', () => {
     });
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('export', async () => {
     const responsePromise = client.v2.leads.export();
     const rawResponse = await responsePromise.asResponse();
@@ -224,7 +224,7 @@ describe('resource leads', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('export: request options and params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
@@ -258,7 +258,7 @@ describe('resource leads', () => {
     ).rejects.toThrow(Instantly.NotFoundError);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('merge: only required params', async () => {
     const responsePromise = client.v2.leads.merge({
       destination_lead_id: '0196ed60-9e3c-7723-8ddb-4bb65fb9628c',
@@ -273,7 +273,7 @@ describe('resource leads', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('merge: required and optional params', async () => {
     const response = await client.v2.leads.merge({
       destination_lead_id: '0196ed60-9e3c-7723-8ddb-4bb65fb9628c',
@@ -281,7 +281,7 @@ describe('resource leads', () => {
     });
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('move', async () => {
     const responsePromise = client.v2.leads.move();
     const rawResponse = await responsePromise.asResponse();
@@ -293,7 +293,7 @@ describe('resource leads', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('move: request options and params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
@@ -332,7 +332,7 @@ describe('resource leads', () => {
     ).rejects.toThrow(Instantly.NotFoundError);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('updateInterestStatus: only required params', async () => {
     const responsePromise = client.v2.leads.updateInterestStatus({
       interest_value: 1,
@@ -347,7 +347,7 @@ describe('resource leads', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('updateInterestStatus: required and optional params', async () => {
     const response = await client.v2.leads.updateInterestStatus({
       interest_value: 1,

@@ -8,7 +8,7 @@ const client = new Instantly({
 });
 
 describe('resource accounts', () => {
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('create: only required params', async () => {
     const responsePromise = client.v2.accounts.create({
       email: 'user@example.com',
@@ -33,7 +33,7 @@ describe('resource accounts', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('create: required and optional params', async () => {
     const response = await client.v2.accounts.create({
       email: 'user@example.com',
@@ -74,7 +74,7 @@ describe('resource accounts', () => {
     });
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('retrieve', async () => {
     const responsePromise = client.v2.accounts.retrieve('jon@doe.com');
     const rawResponse = await responsePromise.asResponse();
@@ -86,7 +86,7 @@ describe('resource accounts', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('update', async () => {
     const responsePromise = client.v2.accounts.update('jon@doe.com');
     const rawResponse = await responsePromise.asResponse();
@@ -98,7 +98,7 @@ describe('resource accounts', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('update: request options and params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
@@ -135,7 +135,7 @@ describe('resource accounts', () => {
     ).rejects.toThrow(Instantly.NotFoundError);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('list', async () => {
     const responsePromise = client.v2.accounts.list();
     const rawResponse = await responsePromise.asResponse();
@@ -147,7 +147,7 @@ describe('resource accounts', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('list: request options and params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
@@ -165,7 +165,7 @@ describe('resource accounts', () => {
     ).rejects.toThrow(Instantly.NotFoundError);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('delete', async () => {
     const responsePromise = client.v2.accounts.delete('jon@doe.com');
     const rawResponse = await responsePromise.asResponse();
@@ -177,7 +177,7 @@ describe('resource accounts', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('delete: request options and params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
@@ -185,7 +185,7 @@ describe('resource accounts', () => {
     ).rejects.toThrow(Instantly.NotFoundError);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('markFixed', async () => {
     const responsePromise = client.v2.accounts.markFixed('user@example.com');
     const rawResponse = await responsePromise.asResponse();
@@ -197,7 +197,7 @@ describe('resource accounts', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('pause', async () => {
     const responsePromise = client.v2.accounts.pause('user@example.com');
     const rawResponse = await responsePromise.asResponse();
@@ -209,7 +209,7 @@ describe('resource accounts', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('resume', async () => {
     const responsePromise = client.v2.accounts.resume('user@example.com');
     const rawResponse = await responsePromise.asResponse();
@@ -221,7 +221,7 @@ describe('resource accounts', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('warmupAnalytics: only required params', async () => {
     const responsePromise = client.v2.accounts.warmupAnalytics({ emails: ['user@example.com'] });
     const rawResponse = await responsePromise.asResponse();
@@ -233,7 +233,7 @@ describe('resource accounts', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('warmupAnalytics: required and optional params', async () => {
     const response = await client.v2.accounts.warmupAnalytics({ emails: ['user@example.com'] });
   });

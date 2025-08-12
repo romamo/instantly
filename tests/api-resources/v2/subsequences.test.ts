@@ -8,7 +8,7 @@ const client = new Instantly({
 });
 
 describe('resource subsequences', () => {
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('create: only required params', async () => {
     const responsePromise = client.v2.subsequences.create({
       conditions: {},
@@ -42,7 +42,7 @@ describe('resource subsequences', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('create: required and optional params', async () => {
     const response = await client.v2.subsequences.create({
       conditions: { crm_status: [1, 2, 3], reply_contains: 'yes' },
@@ -80,7 +80,7 @@ describe('resource subsequences', () => {
     });
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('retrieve', async () => {
     const responsePromise = client.v2.subsequences.retrieve('0196ed60-9e4c-721b-8dc7-bfe3e0083df1');
     const rawResponse = await responsePromise.asResponse();
@@ -92,7 +92,7 @@ describe('resource subsequences', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('update', async () => {
     const responsePromise = client.v2.subsequences.update('0196ed60-9e4d-7089-86d4-8b1c58a0a988');
     const rawResponse = await responsePromise.asResponse();
@@ -104,7 +104,7 @@ describe('resource subsequences', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('update: request options and params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
@@ -136,7 +136,7 @@ describe('resource subsequences', () => {
     ).rejects.toThrow(Instantly.NotFoundError);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('list: only required params', async () => {
     const responsePromise = client.v2.subsequences.list({
       parent_campaign: '123e4567-e89b-12d3-a456-426614174000',
@@ -150,7 +150,7 @@ describe('resource subsequences', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('list: required and optional params', async () => {
     const response = await client.v2.subsequences.list({
       parent_campaign: '123e4567-e89b-12d3-a456-426614174000',
@@ -160,7 +160,7 @@ describe('resource subsequences', () => {
     });
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('delete', async () => {
     const responsePromise = client.v2.subsequences.delete('0196ed60-9e4d-7089-86d4-8b1d1c705a48');
     const rawResponse = await responsePromise.asResponse();
@@ -172,7 +172,7 @@ describe('resource subsequences', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('delete: request options and params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
@@ -184,7 +184,7 @@ describe('resource subsequences', () => {
     ).rejects.toThrow(Instantly.NotFoundError);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('duplicate: only required params', async () => {
     const responsePromise = client.v2.subsequences.duplicate('123e4567-e89b-12d3-a456-426614174000', {
       name: 'My Duplicate Subsequence',
@@ -199,7 +199,7 @@ describe('resource subsequences', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('duplicate: required and optional params', async () => {
     const response = await client.v2.subsequences.duplicate('123e4567-e89b-12d3-a456-426614174000', {
       name: 'My Duplicate Subsequence',
@@ -207,7 +207,7 @@ describe('resource subsequences', () => {
     });
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('pause', async () => {
     const responsePromise = client.v2.subsequences.pause('123e4567-e89b-12d3-a456-426614174000');
     const rawResponse = await responsePromise.asResponse();
@@ -219,7 +219,7 @@ describe('resource subsequences', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('resume', async () => {
     const responsePromise = client.v2.subsequences.resume('123e4567-e89b-12d3-a456-426614174000');
     const rawResponse = await responsePromise.asResponse();

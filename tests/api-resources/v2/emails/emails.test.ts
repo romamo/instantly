@@ -8,7 +8,7 @@ const client = new Instantly({
 });
 
 describe('resource emails', () => {
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('retrieve', async () => {
     const responsePromise = client.v2.emails.retrieve('0196ed60-9e16-7656-8d21-fae3141d222c');
     const rawResponse = await responsePromise.asResponse();
@@ -20,7 +20,7 @@ describe('resource emails', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('update', async () => {
     const responsePromise = client.v2.emails.update('0196ed60-9e16-7656-8d21-fae413cdad11');
     const rawResponse = await responsePromise.asResponse();
@@ -32,7 +32,7 @@ describe('resource emails', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('update: request options and params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
@@ -44,7 +44,7 @@ describe('resource emails', () => {
     ).rejects.toThrow(Instantly.NotFoundError);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('list', async () => {
     const responsePromise = client.v2.emails.list();
     const rawResponse = await responsePromise.asResponse();
@@ -56,7 +56,7 @@ describe('resource emails', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('list: request options and params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
@@ -85,7 +85,7 @@ describe('resource emails', () => {
     ).rejects.toThrow(Instantly.NotFoundError);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('delete', async () => {
     const responsePromise = client.v2.emails.delete('0196ed60-9e17-78f5-8714-d72cbf883338');
     const rawResponse = await responsePromise.asResponse();
@@ -97,7 +97,7 @@ describe('resource emails', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('delete: request options and params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
@@ -109,7 +109,7 @@ describe('resource emails', () => {
     ).rejects.toThrow(Instantly.NotFoundError);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('reply: only required params', async () => {
     const responsePromise = client.v2.emails.reply({
       body: {},
@@ -126,7 +126,7 @@ describe('resource emails', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('reply: required and optional params', async () => {
     const response = await client.v2.emails.reply({
       body: { html: '<p>Hello, how are you?</p>', text: 'Hello, how are you?' },
